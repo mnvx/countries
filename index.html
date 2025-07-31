@@ -408,7 +408,7 @@
         async function loadCountryBoundaries() {
             try {
                 // Load world countries GeoJSON from a reliable source
-                const response = await fetch('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson');
+                const response = await fetch('countries-mini.geojson');
                 const worldData = await response.json();
 
                 // Create a layer group for countries
@@ -416,13 +416,13 @@
 
                 // Process each country feature
                 worldData.features.forEach(feature => {
-                    const countryName = feature.properties.name;
-                    const iso3 = feature.id;
+                    const iso2 = feature.properties.cca2.toUpperCase();
+                    console.log(iso2);
 
                     // Try to find matching country data
                     let countryInfo = null;
-                    if (iso3 && countryDataByISO3[iso3]) {
-                        countryInfo = countryDataByISO3[iso3];
+                    if (iso2 && countryDataByISO2[iso2]) {
+                        countryInfo = countryDataByISO2[iso2];
                     }
 
                     if (countryInfo) {
