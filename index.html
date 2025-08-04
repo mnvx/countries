@@ -329,11 +329,31 @@
         const countryData = [
             { country: 'AD', iso3: 'AND', name: 'Andorra', worldTaxes: 1, totalTaxes: 8.5, comments: 'For family: 0% for $40000, 10% for other' },
             { country: 'AE', iso3: 'ARE', name: 'United Arab Emirates', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'AG', iso3: 'ATG', name: 'Antigua and Barbuda', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'AM', iso3: 'ARM', name: 'Armenia', worldTaxes: 1, totalTaxes: 10, comments: '' },
+            { country: 'BG', iso3: 'BGR', name: 'Bulgaria', worldTaxes: 1, totalTaxes: 10, comments: '10% for world incomes' },
+            { country: 'BH', iso3: 'BHR', name: 'Bahrain', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'BN', iso3: 'BRN', name: 'Brunei Darussalam', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'BY', iso3: 'BLR', name: 'Belarus', worldTaxes: 1, totalTaxes: 6, comments: 'Individual enterpreneur' },
+            { country: 'DM', iso3: 'DMA', name: 'Dominica', worldTaxes: 0, totalTaxes: 35, comments: '' },
+            { country: 'GD', iso3: 'GRD', name: 'Grenada', worldTaxes: 0, totalTaxes: 28, comments: '' },
+            { country: 'GE', iso3: 'GEO', name: 'Georgia', worldTaxes: 1, totalTaxes: 3, comments: 'Individual enterpreneur' },
             { country: 'KG', iso3: 'KGZ', name: 'Kyrgyzstan', worldTaxes: 1, totalTaxes: 2, comments: 'Individual enterpreneur, IT' },
+            { country: 'KN', iso3: 'KNA', name: 'Saint Kitts and Nevis', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'KW', iso3: 'KWT', name: 'Kuwait', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'KY', iso3: 'CYM', name: 'Cayman Islands', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'KZ', iso3: 'KAZ', name: 'Kazakhstan', worldTaxes: 1, totalTaxes: 3, comments: 'Individual enterpreneur' },
+            { country: 'LC', iso3: 'LCA', name: 'Saint Lucia', worldTaxes: 0, totalTaxes: 30, comments: '' },
+            { country: 'MC', iso3: 'MCO', name: 'Monaco', worldTaxes: 25, totalTaxes: 0, comments: 'No taxes for companies who gain 75% of incomes inside of country. No taxes for residents.' },
             { country: 'PA', iso3: 'PAN', name: 'Panama', worldTaxes: 0, totalTaxes: 25, comments: '' },
             { country: 'PT', iso3: 'PRT', name: 'Portugal', worldTaxes: 0, totalTaxes: 30, comments: 'Progressive tax system, NHR program available' },
-            { country: 'RU', iso3: 'RUS', name: 'Russia', worldTaxes: 1, totalTaxes: 6, comments: 'Individual enterpreneur s    implified tax form' },
+            { country: 'QA', iso3: 'QAT', name: 'Qatar', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'RU', iso3: 'RUS', name: 'Russia', worldTaxes: 1, totalTaxes: 6, comments: 'Individual enterpreneur s implified tax form' },
             { country: 'RS', iso3: 'SRB', name: 'Serbia', worldTaxes: 1, totalTaxes: 14, comments: 'Individual enterpreneur on lump sum system, IT' },
+            { country: 'SA', iso3: 'SAU', name: 'Saudi Arabia', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
+            { country: 'UZ', iso3: 'UZB', name: 'Uzbekistan', worldTaxes: 1, totalTaxes: 12, comments: 'Individual enterpreneur' },
+            { country: 'VC', iso3: 'VCT', name: 'Saint Vincent and the Grenadines', worldTaxes: 0, totalTaxes: 0, comments: '' },
+            { country: 'VG', iso3: 'VGB', name: 'British Virgin Islands', worldTaxes: 0, totalTaxes: 0, comments: 'No personal income tax' },
             // { country: 'US', iso3: 'USA', name: 'United States', worldTaxes: 1, totalTaxes: 37, comments: 'Worldwide taxation for citizens and residents' },
             // { country: 'SG', iso3: 'SGP', name: 'Singapore', worldTaxes: 0, totalTaxes: 22, comments: 'Territorial tax system' },
             // { country: 'HK', iso3: 'HKG', name: 'Hong Kong', worldTaxes: 0, totalTaxes: 17, comments: 'Territorial tax system' },
@@ -560,7 +580,7 @@
                 }
 
                 // Check if country meets "Low Tax" criteria
-                if (lowTaxEnabled && country.totalTaxes < 10) {
+                if (lowTaxEnabled && country.totalTaxes <= 10) {
                     shouldShow = true;
                     color = '#2196F3';
                     fillColor = '#2196F3';
